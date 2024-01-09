@@ -1,9 +1,12 @@
 package amadeus.flight.classes;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -12,10 +15,23 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Flight extends BaseEntity{
     @NonNull
-    private String departureAirport;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Airport departureAirport;
 
     @NonNull
-    private String arrivalAirport;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Airport arrivalAirport;
+
+    @NonNull
+    private String departureTime;
+
+    @NonNull
+    private String returnTime;
 
     private int Price;
+
+    public Flight(@NonNull String departureTime, @NonNull String returnTime) {
+        this.departureTime=departureTime;
+        this.returnTime=returnTime;
+    }
 }

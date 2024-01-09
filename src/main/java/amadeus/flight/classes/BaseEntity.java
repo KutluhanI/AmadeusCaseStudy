@@ -20,19 +20,4 @@ public class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
-    @PrePersist
-    public void onPersist(){
-        setCreatedAt(LocalDateTime.now());
-        setUpdatedAt(LocalDateTime.now());
-    }
-
-    @PreUpdate
-    public void onUpdate(){
-        setUpdatedAt(LocalDateTime.now());
-    }
 }

@@ -1,14 +1,22 @@
 package amadeus.flight.DTOs;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
 
 @Setter
 @Getter
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class AirportsDto {
+
+    private Long id;
+
     private String city;
+
+    private List<Long> flightsToDeparture;
+
+    private List<Long> flightsToArrive;
+
 }

@@ -24,4 +24,11 @@ public class User extends BaseEntity {
 
     @ManyToOne(cascade = CascadeType.MERGE)
     private Role role;
+
+    private String password;
+
+    private Boolean enabled;
+
+    private Boolean isAdmin;
+
 }

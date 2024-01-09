@@ -11,14 +11,16 @@ import static jakarta.persistence.TemporalType.DATE;
 @Getter
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class FlightDto {
+    private Long id;
     private String departureAirport;
 
     private String arrivalAirport;
 
-    private Date arrivalTime;
+    private String returnTime;
 
-    private Date departureTime;
+    private String departureTime;
 
     private int Price;
 }
